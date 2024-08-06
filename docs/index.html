@@ -103,22 +103,15 @@
         }
     </style>
     <script>
-        function copyPhoneNumber1() {
-            const phoneNumber = "01072499294";
-            navigator.clipboard.writeText(phoneNumber).then(function () {
-                alert('전화번호가 복사되었습니다');
-            }, function (err) {
-                console.error('전화번호 복사에 실패했습니다');
-            });
-        }
-        function copyPhoneNumber2() {
-            const phoneNumber = "01044170625";
-            navigator.clipboard.writeText(phoneNumber).then(function () {
-                alert('전화번호가 복사되었습니다');
-            }, function (err) {
-                console.error('전화번호 복사에 실패했습니다');
-            });
-        }
+         function makeCall() {
+                const phoneNumber = "01072499294";
+                window.location.href = `tel:${phoneNumber}`;
+            }
+            function makeCall1() {
+                    const phoneNumber = "01044170625";
+                    window.location.href = `tel:${phoneNumber}`;
+                }
+      
     </script>
 </head>
 
