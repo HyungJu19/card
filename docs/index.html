@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://code.jquery.com/jquery-2.2.1.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/remarkable/1.7.1/remarkable.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css" />
     <title>믿음철홍</title>
     <style>
         body {
@@ -13,12 +15,10 @@
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
             text-align: left;
             background-color: #d7d7d7;
-            /* 배경색 설정 (예: 연한 파란색) */
         }
 
-        /* Home Page Style */
         .ww-home-page {
-            background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("images/p1.png") no-repeat center center;
+            background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("images/1p1.png") no-repeat center center;
             background-size: cover;
             background-position: 50%;
             height: 100vh;
@@ -48,7 +48,6 @@
             text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.4);
         }
 
-
         .grid-container {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -60,12 +59,11 @@
         .grid-item {
             width: 100%;
             padding-bottom: 100%;
-            /* 정사각형을 유지하기 위해 */
             background-size: cover;
             background-position: center center;
+            cursor: pointer;
         }
 
-        /* 각 이미지의 배경을 설정 */
         .img1 {
             background-image: url('images/p2.jpg');
         }
@@ -101,18 +99,69 @@
         .img9 {
             background-image: url('images/p5.jpg');
         }
-    </style>
-    <script>
-        function makeCall() {
-            const phoneNumber = "01072499294";
-            window.location.href = `tel:${phoneNumber}`;
-        }
-        function makeCall1() {
-            const phoneNumber = "01044170625";
-            window.location.href = `tel:${phoneNumber}`;
+
+        /* Modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0, 0, 0);
+            background-color: rgba(0, 0, 0, 0.9);
         }
 
-    </script>
+        .modal-content {
+            position: relative;
+            margin: auto;
+            padding: 0;
+            width: 90%;
+            max-width: 800px;
+        }
+
+        .close {
+            color: white;
+            position: absolute;
+            top: 10px;
+            right: 25px;
+            font-size: 35px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #999;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .slick-slide img {
+            display: block;
+            width: 100%;
+            height: auto;
+            pointer-events: none; /* 이미지 클릭 불가 설정 */
+        }
+
+        .fixed-size-img {
+            width: 100%;
+            max-width: 500px; /* 원하는 고정 크기로 설정 */
+            height: 300px; /* 원하는 고정 크기로 설정 */
+            object-fit: cover; /* 이미지 비율 유지 */
+            pointer-events: none; /* 이미지 클릭 불가 설정 */
+        }
+
+        .slick-prev, .slick-next {
+            font-size: 30px;
+            line-height: 1;
+            opacity: .75;
+            color: white;
+            border: none;
+            background: none;
+        }
+    </style>
 </head>
 
 <body id="top">
@@ -120,29 +169,21 @@
     <div id="fb-root"></div>
     <div class="page-content">
         <div class="ww-home-page" id="home">
-            <div
-                style="background-color: rgba(255, 255, 255, 0.184);width: 100%; padding-top: 0px; padding-bottom: 5px;">
+            <div style="background-color: rgba(255, 255, 255, 0.184);width: 100%; padding-top: 0px; padding-bottom: 5px;">
                 <p style="margin: 0;">2024. 08. 22.</p>
             </div>
         </div>
-        <div style="text-align: center; font-size: 0.9em; ">
-
+        <div style="text-align: center; font-size: 0.9em;">
             <br>
             <br>
-
-
             <br>
             <br>
             <b>
                 <div>
                     <img src="images/123.png" style="width: 100%;">
                 </div>
-
-                <br>
-
                 <br>
                 <br>
-
                 <br>
                 <br>
                 <br>
@@ -154,24 +195,13 @@
                     <p>어느 한쪽의 색이 곱다고 내세우는것이 아니라</p>
                     <p>서로의 삶 속에 스며드는 것이라고 생각합니다. </p>
                 </div>
-
-
-                <br>
-
-                <br>
-                <br>
-
                 <br>
                 <br>
                 <br>
                 <br>
-
-
-
-
-
-
-
+                <br>
+                <br>
+                <br>
                 <div>
                     <img src="images/ives.png" width="30px">
                     <p style="color: brown;">결혼합니다.</p>
@@ -183,13 +213,12 @@
                 <br>
                 <br>
                 <br>
-
                 <div>
                     <p>늘 곁에서 아껴주셨던</p>
                     <p>감사한 분들을 모시고</p>
                     <p>혼인의 예를 갖추어야 하나</p>
                     <p>부득이하게 양가 가족들만 모시고</p>
-                    <p>작은 결혼식을 올리게 되었습니다.</p>
+                    <p>결혼식을 올리게 되었습니다.</p>
                     <br>
                     <br>
                     <br>
@@ -200,28 +229,24 @@
                 </div>
             </b>
         </div>
-
         <br>
         <br>
         <br>
         <br>
         <br>
         <div>
-            <div style="display: flex;
-                    justify-content: center;
-                    align-items: center;">
+            <div style="display: flex; justify-content: center; align-items: center;">
                 <div class="grid-container">
-                    <div class="grid-item img1"></div>
-                    <div class="grid-item img2"></div>
-                    <div class="grid-item img3"></div>
-                    <div class="grid-item img4"></div>
-                    <div class="grid-item img5"></div>
-                    <div class="grid-item img6"></div>
-                    <div class="grid-item img7"></div>
-                    <div class="grid-item img8"></div>
-                    <div class="grid-item img9"></div>
+                    <div class="grid-item img1" data-index="0"></div>
+                    <div class="grid-item img2" data-index="1"></div>
+                    <div class="grid-item img3" data-index="2"></div>
+                    <div class="grid-item img4" data-index="3"></div>
+                    <div class="grid-item img5" data-index="4"></div>
+                    <div class="grid-item img6" data-index="5"></div>
+                    <div class="grid-item img7" data-index="6"></div>
+                    <div class="grid-item img8" data-index="7"></div>
+                    <div class="grid-item img9" data-index="8"></div>
                 </div>
-
             </div>
         </div>
         <br>
@@ -229,32 +254,88 @@
         <br>
         <br>
         <br>
-
         <div class="ww-home-page2" id="home"></div>
         <br>
         <div style="margin-top: 10px; text-align: center;">
             <div>
-                <span><img src="images/ho1.png" style="width: 280px; "></span><span><img src="images/phone.png"
-                        width="20px" style="margin-left: 40px; margin-bottom: 3px;" onclick="makeCall();"></span>
+                <span><img src="images/ho1.png" style="width: 280px;"></span><span><img src="images/phone.png" width="20px" style="margin-left: 40px; margin-bottom: 3px;" onclick="makeCall();"></span>
             </div>
-
             <div style="margin-top: 10px;">
-                <span><img src="images/ho2.png" style="width: 280px;"></span><span><img src="images/phone.png"
-                        width="20px" style="margin-left: 40px; margin-bottom: 3px;" onclick="makeCall1();"></span>
+                <span><img src="images/ho2.png" style="width: 280px;"></span><span><img src="images/phone.png" width="20px" style="margin-left: 40px; margin-bottom: 3px;" onclick="makeCall1();"></span>
             </div>
         </div>
         <br>
         <br>
         <br>
+        <!-- Modal -->
+        <div id="myModal" class="modal" >
+            <span class="close" style="color: rgba(0, 0, 0, 0.379);">&times;</span>
+            <div class="modal-content">
+                <div class="image-slider" style="margin-top: 50px;">
+                    <div><img src="images/p2.jpg" alt="image1" class="fixed-size-img"></div>
+                    <div><img src="images/p2.jpg" alt="image2" class="fixed-size-img"></div>
+                    <div><img src="images/p3.jpg" alt="image3" class="fixed-size-img"></div>
+                    <div><img src="images/p4.jpg" alt="image4" class="fixed-size-img"></div>
+                    <div><img src="images/p5.jpg" alt="image5" class="fixed-size-img"></div>
+                    <div><img src="images/p6.jpg" alt="image6" class="fixed-size-img"></div>
+                    <div><img src="images/p7.jpg" alt="image7" class="fixed-size-img"></div>
+                    <div><img src="images/p8.jpg" alt="image8" class="fixed-size-img"></div>
+                    <div><img src="images/p5.jpg" alt="image9" class="fixed-size-img"></div>
+                </div>
+                <div style="text-align: center;">
+                <span><button class="slick-prev">&lt;</button></span><span><button class="slick-next">&gt;</button></span>
+                </div>
+            </div>
+        </div>
 
-
-        <!-- 국민은행 장재룡 517102 - 01 - 271033 
-             농협은행 박찬구 702043 - 52 - 117356
-             국민은행 장믿음 650702 - 01 - 307600
-             
-        
-        -->
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
     </div>
+    <script>
+        function makeCall() {
+            const phoneNumber = "01044170625";
+            window.location.href = `tel:${phoneNumber}`;
+        }
+
+        function makeCall1() {
+            const phoneNumber = "01072499294";
+            window.location.href = `tel:${phoneNumber}`;
+        }
+
+        $(document).ready(function () {
+            var modal = $('#myModal');
+            var span = $('.close');
+
+            // Initialize Slick slider
+            $('.image-slider').slick({
+                infinite: true,
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                adaptiveHeight: false,
+                prevArrow: $('.slick-prev'),
+                nextArrow: $('.slick-next')
+            });
+
+            $('.grid-item').on('click', function () {
+                var index = $(this).data('index');
+                $('.image-slider').slick('slickGoTo', index);
+                modal.show();
+            });
+
+            span.on('click', function () {
+                modal.hide();
+            });
+
+            $(window).on('click', function (event) {
+                if ($(event.target).is(modal)) {
+                    modal.hide();
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>
