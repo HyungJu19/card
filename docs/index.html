@@ -454,8 +454,8 @@
                     <div><img src="images/po12.png" alt="image8"  ></div>
                     <div><img src="images/po5.png" alt="image9"  ></div>
                     <div><img src="images/po10.png" alt="image10"  ></div>
-                    <div><img src="images/po4.png" alt="image11"  ></div>
-                    <div><img src="images/po9.png" alt="image12"  ></div>
+                    <div><img src="images/po9.png" alt="image11"  ></div>
+                    <div><img src="images/po4.png" alt="image12"  ></div>
                     <div><img src="images/po7.png" alt="image13"  ></div>
                     <div><img src="images/po8.png" alt="image14"  ></div>
 
@@ -530,11 +530,13 @@
 
             $('#groomAccount').on('click', function () {
                 modalText.html(
-                    '<div class="account-container"><span>아버님 계좌번호: 1234-5678-9101</span><button class="copy-button" id="copyGroomFatherAccount">복사하기</button></div>' +
-                    '<div class="account-container"><span>어머님 계좌번호: 2222-2222-2222</span><button class="copy-button" id="copyGroomMotherAccount">복사하기</button></div>'
+                    '<div class="account-container"><span>신랑측 계좌번호</span></div>' +
+                    '<hr>' +
+                    '<div class="account-container"><span>박찬국 농협 : 702-043-52-117356</span><button class="copy-button" id="copyGroomFatherAccount">복사하기</button></div>' +
+                    '<div class="account-container"><span>박철홍 농협 : 760-02-346817</span><button class="copy-button" id="copyGroomMotherAccount">복사하기</button></div>'
                 );
-                $('#copyGroomFatherAccount').data('account', '1234-5678-9101');
-                $('#copyGroomMotherAccount').data('account', '2222-2222-2222');
+                $('#copyGroomFatherAccount').data('account', '702-043-52-117356');
+                $('#copyGroomMotherAccount').data('account', '760-02-346817');
                 
                 modal.addClass('show');
                 $('.modal-content1').addClass('show');
@@ -542,11 +544,13 @@
 
             $('#brideAccount').on('click', function () {
                 modalText.html(
-                    '<div class="account-container"><span>아버님 계좌번호: 1098-7654-3210</span><button class="copy-button" id="copyBrideFatherAccount">복사하기</button></div>' +
-                    '<div class="account-container"><span>어머님 계좌번호: 1111-1111-1111</span><button class="copy-button" id="copyBrideMotherAccount">복사하기</button></div>'
+                    '<div class="account-container"><span>신부측 계좌번호</span></div>' +
+                    '<hr>' +
+                    '<div class="account-container"><span>장재룡 국민 : 517102-01-271033</span><button class="copy-button" id="copyBrideFatherAccount">복사하기</button></div>' +
+                    '<div class="account-container"><span>장믿음 국민 : 650702-01-307600</span><button class="copy-button" id="copyBrideMotherAccount">복사하기</button></div>'
                 );
-                $('#copyBrideFatherAccount').data('account', '1098-7654-3210');
-                $('#copyBrideMotherAccount').data('account', '1111-1111-1111');
+                $('#copyBrideFatherAccount').data('account', '517102-01-271033');
+                $('#copyBrideMotherAccount').data('account', '650702-01-307600');
                 
                 modal.addClass('show');
                 $('.modal-content1').addClass('show');
