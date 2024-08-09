@@ -472,6 +472,13 @@
         <br>
         <br>
     </div>
+
+        <!-- 배경 음악 추가 -->
+        <audio id="background-music" loop autoplay>
+            <source src="music/ro.mp3" type="audio/mpeg">
+          
+        </audio>
+
     <script>
         function makeCall() {
             const phoneNumber = "01044170625";
@@ -591,7 +598,13 @@
 
 
 
+  // 배경 음악 제어
+  const backgroundMusic = document.getElementById('background-music');
+        backgroundMusic.volume = 0.5;  // 볼륨 조절
 
+        $(document).ready(function () {
+            // 기타 스크립트
+        });
         
     </script>
 </body>
